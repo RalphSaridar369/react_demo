@@ -1,0 +1,14 @@
+@use '../Utilities/variables'; 
+
+.button{
+    @include variables.button;
+}
+
+.input{
+    @include variables.input;
+}
+
+.docpicker{
+    width:200px;
+    margin:10px 0!important;
+}
