@@ -19,3 +19,30 @@
 .header__right__icon:hover{
     cursor: pointer;
 }
+
+.inside__drawer{
+    // background-color: rgba(255, 104, 99, 0.6);
+    padding:0px 0px 20px 0px;
+    width:200px;
+    flex:1
+}
+
+.inside__drawer__logo{
+    height: 10vh;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.inside__drawer__container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration:none!important;
+    margin:0 30px;
+}
+
+.inside__drawer__container__link{
+    color:#FF6863;
+    text-decoration:none!important;
+}
