@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import {setItem, getItem} from '../../helpers/storage';
+import './style.scss';
 
 const Home = () =>{
     useEffect(()=>{
@@ -7,7 +8,7 @@ const Home = () =>{
         getItem("user");
     },[])
     return(
-        <div>Hello</div>
+        <div className='home__header'>Hello</div>
     )
 }
 

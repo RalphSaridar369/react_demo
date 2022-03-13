@@ -1,0 +1,7 @@
+@use '../../Utilities/variables.scss';
+
+.home__header{
+    font-size:18;
+    color:variables.$primary;
+    margin: 30px;
+}
