@@ -9,7 +9,7 @@ export const setItem =(key,value)=>{
 export const getItem =(key)=>{
     let keyhash = MD5encrypt(key);
     let val = sessionStorage.getItem(keyhash);
-    console.log(val)
+    return val;
 }
 
 export const removeKey =(key)=>{

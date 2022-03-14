@@ -10,21 +10,29 @@ import {
 } from "react-router-dom";
 import Header from './Screen_Components/Header/Header';
 import Home from './Screen/Home/Home';
+import { Routes } from './Routes';
 
 const App =()=> {
+
 	const [state, dispatch] = useReducer(mainReducer, initialState);
+
+  const mapRoutes =()=>{
+    return Routes.map((item,index)=>{
+      switch (item.type){
+        case 'normal':
+          return <Route path={item.path} exact={item.exact} key={index}>
+            {item.header && <Header/>}
+            {item.component}
+          </Route>
+      }
+    })
+  }
 
   return (
     <Router>
       <MainContext.Provider value={[state, dispatch]}>
-        <Header />
         <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            {/* <Route path="/about">
-              <About />
-            </Route> */}
+            {mapRoutes()}
         </Switch>
       </MainContext.Provider>
     </Router>
