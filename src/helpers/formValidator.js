@@ -1,11 +1,10 @@
 import * as yup from 'yup';
-import { AlertBox } from '../Components/Alert/Alert';
 
 const forms = {
 
     login:yup.object().shape({
         password: yup.string().required(),
-        username: yup.string().required(),
+        email: yup.string().required().email(),
     }),
 
     register:yup.object().shape({
@@ -27,10 +26,9 @@ export const formValidator = async(payload,type,callback) =>{
         return err
     })
     let error = (validationResult+"").split(": ")[1]
-    if(error){
-        // alert(error);
-        return {text:error, type:'error'};
-    }
-    callback()
+    if(error)
+        alert(error);
+    else
+        callback()
 }
 

@@ -32,19 +32,19 @@
     height: 10vh;
     width: 100%;
     margin-bottom: 100px;
-}
 
-.inside__drawer__container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    text-decoration:none!important;
-    margin:0 30px;
-    margin-bottom: 20px;
-}
+    .inside__drawer__container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration:none!important;
+        margin:0 30px;
+        margin-bottom: 20px;
 
-.inside__drawer__container__link{
-    color:variables.$primary;
-    text-decoration:none!important;
+        .inside__drawer__container__link{
+            color:variables.$primary;
+            text-decoration:none!important;
+        }
+    }
 }

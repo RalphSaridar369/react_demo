@@ -1,1 +1,31 @@
-$primary: #FF6863;
+$primary: hsl(2, 100%, 69%);
+
+$fullwidth: 100vw;
+$fullheight: 100vh;
+
+$xs:400px;
+$sm: 600px;
+$md: 800px;
+$lg: 1000px;
+
+@mixin button{
+    width: 100%;
+    background-color: $primary!important;
+    margin: 10px 0!important;;
+    @media (max-width: $md) {
+        width:150px
+    }
+    @media (max-width: $xs) {
+        width:100px
+    }
+}
+
+@mixin input{
+    width: 100%;
+    @media (max-width: $sm) {
+        width:300px
+    }
+    @media (max-width: $xs) {
+        width:250px
+    }
+}
