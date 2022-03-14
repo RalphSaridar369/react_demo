@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import './Header.scss';
 import Drawer from '@mui/material/Drawer';
 
+import { clear, getItem } from '../../helpers/storage';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
+import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
-import { Links } from './Links';
 
 const Header = () => {
 
@@ -15,13 +18,47 @@ const Header = () => {
             color: '#FF6863',
             fontSize: 40
         },
+        linkIcon: {
+            color: '#FF6863',
+            fontSize: 40,
+            marginRight: 20
+        }
     }
+
+
+
+    let LoggedIn = getItem("user")
+    let Logout = () => {
+        clear()
+    }
+
+    const Links = [
+        {
+            to: "/",
+            icon: <HomeOutlinedIcon style={styles.linkIcon} />,
+            text: 'Home',
+            type: 'normal',
+            onClick: ()=>{}
+        },
+        {
+            to: LoggedIn ? "/" : "/login",
+            icon: LoggedIn ? <LogoutOutlinedIcon style={styles.linkIcon} /> : <LoginOutlinedIcon style={styles.linkIcon} />,
+            text: LoggedIn ? 'Logout' : 'Login',
+            type: 'normal',
+            onClick: () => {
+                if (LoggedIn){
+                    Logout()
+                    setOpen(false)
+                }
+            }
+        }
+    ]
 
     const mapLinks = () => {
         return Links.map((item, index) => {
             switch (item.type) {
                 case 'normal':
-                    return <Link to={item.to} className="inside__drawer__container" key={index}>
+                    return <Link to={item.to} className="inside__drawer__container" key={index} onClick={()=>item?.onClick()}>
                         {item.icon}
                         <p className='inside__drawer__container__link'>{item.text}</p>
                     </Link>
