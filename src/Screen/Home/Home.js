@@ -8,6 +8,7 @@ const Home = () =>{
     useEffect(()=>{
         setItem("user","123");
         setItem("user-details",{usertype:1});
+        console.log(typeof getItem('user-details'))
         console.log(state)
     },[])
     return(
