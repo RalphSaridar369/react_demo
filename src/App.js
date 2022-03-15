@@ -8,14 +8,15 @@ import {
 } from "react-router-dom";
 import Header from './Screen_Components/Header/Header';
 import Home from './Screen/Home/Home';
-import { NormalRoutes } from './Routes';
+import { BuyerRoutes, NormalRoutes } from './Routes';
+import ProtectedBuyer from './Protected/ProtectedBuyer';
 
 const App = () => {
 
   const [state, dispatch] = useReducer(mainReducer, initialState);
 
-  const mapNormalRoutes = () => {
-    return NormalRoutes.map((item, index) => {
+  const mapNormalRoutes = (data) => {
+    return data.map((item, index) => {
       let element;
       if (item.header == true) {
         element = <>
@@ -32,8 +33,11 @@ const App = () => {
   return (
     <MainContext.Provider value={[state, dispatch]}>
       <Routes>
-        {mapNormalRoutes()}
+        {mapNormalRoutes(NormalRoutes)}
       </Routes>
+      {/* <Route element={<ProtectedBuyer/>}>
+        {mapNormalRoutes(BuyerRoutes)}
+      </Route> */}
     </MainContext.Provider>
   );
 }

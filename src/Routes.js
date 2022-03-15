@@ -28,22 +28,22 @@ export const NormalRoutes = [
     }
 ];
 
-// export const SellerRoutes = [
-//     {
-//         path:'/dashboard',
-//         exact:true,
-//         type:'seller',
-//         header:false,
-//         component:<Dashboard />
-//     },
-// ];
+export const SellerRoutes = [
+    {
+        path:'/dashboard',
+        exact:true,
+        type:'seller',
+        header:false,
+        component:<Dashboard />
+    },
+];
 
-// export const BuyerRoutes = [
-//     {
-//         path:'/cart',
-//         exact:true,
-//         type:'buyer',
-//         header:false,
-//         component:<Cart />
-//     }
-// ]
+export const BuyerRoutes = [
+    {
+        path:'/cart',
+        exact:true,
+        type:'buyer',
+        header:false,
+        component:<Cart />
+    }
+]
