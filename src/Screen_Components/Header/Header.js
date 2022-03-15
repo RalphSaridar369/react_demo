@@ -27,6 +27,7 @@ const Header = () => {
             fontSize: 40,
             marginRight: 20
         }
+        
     }
 
 

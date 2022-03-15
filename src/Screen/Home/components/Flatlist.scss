@@ -1,0 +1,9 @@
+@use '../../../Utilities/variables.scss';
+
+.flatlist__header{
+    color:variables.$primary;
+}
+
+.flatlist{
+    margin: 20px 30px;
+}
