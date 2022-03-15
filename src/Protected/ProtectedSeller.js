@@ -4,12 +4,12 @@ import Home from "../Screen/Home/Home";
 
 const useAuth = () =>{
     let user = getItem('user-details');
-    return user?.usertype === 1;
+    return user?.usertype === 2;
 }
 
-const ProtectedBuyer = () =>{
+const ProtectedSeller = () =>{
     const isAuth = useAuth();
     return isAuth ? <Outlet/> :<Navigate to="/"/>
 }
 
-export default ProtectedBuyer
+export default ProtectedSeller

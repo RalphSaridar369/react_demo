@@ -8,8 +8,9 @@ import {
 } from "react-router-dom";
 import Header from './Screen_Components/Header/Header';
 import Home from './Screen/Home/Home';
-import { BuyerRoutes, NormalRoutes } from './Routes';
+import { BuyerRoutes, NormalRoutes, SellerRoutes } from './Routes';
 import ProtectedBuyer from './Protected/ProtectedBuyer';
+import ProtectedSeller from './Protected/ProtectedSeller';
 
 const App = () => {
 
@@ -34,10 +35,13 @@ const App = () => {
     <MainContext.Provider value={[state, dispatch]}>
       <Routes>
         {mapNormalRoutes(NormalRoutes)}
+        <Route element={<ProtectedBuyer/>}>
+          {mapNormalRoutes(BuyerRoutes)}
+        </Route>
+        <Route element={<ProtectedSeller/>}>
+          {mapNormalRoutes(SellerRoutes)}
+        </Route>
       </Routes>
-      {/* <Route element={<ProtectedBuyer/>}>
-        {mapNormalRoutes(BuyerRoutes)}
-      </Route> */}
     </MainContext.Provider>
   );
 }
