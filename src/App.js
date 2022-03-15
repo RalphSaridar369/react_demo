@@ -1,41 +1,40 @@
 import './App.scss';
-import React, {useReducer} from 'react';
-import {initialState, MainContext} from './MainContext';
+import React, { useReducer } from 'react';
+import { initialState, MainContext } from './MainContext';
 import mainReducer from './reducer/MainReducer';
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
+  Routes,
+  Route
 } from "react-router-dom";
 import Header from './Screen_Components/Header/Header';
 import Home from './Screen/Home/Home';
-import { Routes } from './Routes';
+import { NormalRoutes } from './Routes';
 
-const App =()=> {
+const App = () => {
 
-	const [state, dispatch] = useReducer(mainReducer, initialState);
+  const [state, dispatch] = useReducer(mainReducer, initialState);
 
-  const mapRoutes =()=>{
-    return Routes.map((item,index)=>{
-      switch (item.type){
-        case 'normal':
-          return <Route path={item.path} exact={item.exact} key={index}>
-            {item.header && <Header/>}
-            {item.component}
-          </Route>
+  const mapNormalRoutes = () => {
+    return NormalRoutes.map((item, index) => {
+      let element;
+      if (item.header == true) {
+        element = <>
+          <Header />
+          {item.component}
+        </>
       }
+      else
+        element = item.component
+      return <Route path={item.path} exact={item.exact} key={index} element={element} />
     })
   }
 
   return (
-    <Router>
-      <MainContext.Provider value={[state, dispatch]}>
-        <Switch>
-            {mapRoutes()}
-        </Switch>
-      </MainContext.Provider>
-    </Router>
+    <MainContext.Provider value={[state, dispatch]}>
+      <Routes>
+        {mapNormalRoutes()}
+      </Routes>
+    </MainContext.Provider>
   );
 }
 

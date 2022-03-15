@@ -3,13 +3,14 @@ import {encrypt,decrypt,MD5encrypt} from './cryptoJs';
 const secret_key  = "1234"
 
 export const setItem =(key,value)=>{
-    sessionStorage.setItem(MD5encrypt(key),encrypt(value, secret_key));
+    let val = JSON.stringify(value)
+    sessionStorage.setItem(MD5encrypt(key),encrypt(val, secret_key));
 };
 
 export const getItem =(key)=>{
     let keyhash = MD5encrypt(key);
-    let val = sessionStorage.getItem(keyhash);
-    return val;
+    let val = decrypt(sessionStorage.getItem(keyhash), secret_key);
+    return JSON.parse(val);
 }
 
 export const removeKey =(key)=>{

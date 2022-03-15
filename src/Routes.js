@@ -1,8 +1,10 @@
 import Home from './Screen/Home/Home';
 import Login from './Screen/Auth/Login/Login';
 import Register from './Screen/Auth/Register/Register';
+import Dashboard from './Screen/Dashboard/Dashboard';
+import Cart from './Screen/Cart/Cart';
 
-export const Routes = [
+export const NormalRoutes = [
     {
         path:'/login',
         exact:true,
@@ -24,4 +26,24 @@ export const Routes = [
         header:true,
         component:<Home />
     }
-]
+];
+
+// export const SellerRoutes = [
+//     {
+//         path:'/dashboard',
+//         exact:true,
+//         type:'seller',
+//         header:false,
+//         component:<Dashboard />
+//     },
+// ];
+
+// export const BuyerRoutes = [
+//     {
+//         path:'/cart',
+//         exact:true,
+//         type:'buyer',
+//         header:false,
+//         component:<Cart />
+//     }
+// ]
