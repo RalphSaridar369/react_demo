@@ -10,6 +10,7 @@ $lg: 1000px;
 
 @mixin button{
     width: 100%;
+    max-width: 250px;
     background-color: $primary!important;
     margin: 10px 0!important;;
     @media (max-width: $md) {
@@ -22,6 +23,7 @@ $lg: 1000px;
 
 @mixin input{
     width: 100%;
+    max-width: 300px;
     @media (max-width: $sm) {
         width:300px
     }
