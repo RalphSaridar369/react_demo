@@ -33,7 +33,7 @@ export const SellerRoutes = [
         path:'/dashboard',
         exact:true,
         type:'seller',
-        header:false,
+        header:true,
         component:<Dashboard />
     },
 ];
@@ -43,7 +43,7 @@ export const BuyerRoutes = [
         path:'/cart',
         exact:true,
         type:'buyer',
-        header:false,
+        header:true,
         component:<Cart />
     }
 ]

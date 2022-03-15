@@ -6,6 +6,8 @@ import { clear, getItem } from '../../helpers/storage';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
 
@@ -28,6 +30,8 @@ const Header = () => {
 
 
     let LoggedIn = getItem("user")
+    let UserType = getItem('user-details').usertype;
+    console.log(UserType)
     let Logout = () => {
         clear()
     }
@@ -37,6 +41,20 @@ const Header = () => {
             to: "/",
             icon: <HomeOutlinedIcon style={styles.linkIcon} />,
             text: 'Home',
+            type: 'normal',
+            onClick: ()=>{}
+        },
+        UserType==1 && {
+            to: "/cart",
+            icon: <ShoppingCartIcon style={styles.linkIcon} />,
+            text: 'Cart',
+            type: 'normal',
+            onClick: ()=>{}
+        },
+        UserType==2 && {
+            to: "/dashboard",
+            icon: <DashboardIcon style={styles.linkIcon} />,
+            text: 'Dashboard',
             type: 'normal',
             onClick: ()=>{}
         },
@@ -51,7 +69,7 @@ const Header = () => {
                     setOpen(false)
                 }
             }
-        }
+        },
     ]
 
     const mapLinks = () => {

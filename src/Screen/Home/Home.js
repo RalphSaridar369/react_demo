@@ -7,7 +7,7 @@ const Home = () =>{
     const [state,dispatch] = useContext(MainContext)
     useEffect(()=>{
         setItem("user","123");
-        setItem("user-details",{usertype:1});
+        setItem("user-details",{usertype:2});
         console.log(typeof getItem('user-details'))
         console.log(state)
     },[])
