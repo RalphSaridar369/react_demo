@@ -4,7 +4,7 @@ import { MainContext } from '../../MainContext';
 import './style.scss';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import { carouselData } from '../../mockData';
+import { carouselData, flatList1, flatList2, flatList3 } from '../../mockData';
 import Flatlist from './components/Flatlist';
 
 const Home = () => {
@@ -21,9 +21,9 @@ const Home = () => {
                     })}
                 </Carousel>
             </div>
-            <Flatlist title="Top Products"/>
-            <Flatlist title="Top Selling"/>
-            <Flatlist title="Best Consoles"/>
+            <Flatlist title="Top Products" data={flatList1}/>
+            <Flatlist title="Top Selling" data={flatList2}/>
+            <Flatlist title="Best Consoles" data={flatList3}/>
         </div>
     )
 }

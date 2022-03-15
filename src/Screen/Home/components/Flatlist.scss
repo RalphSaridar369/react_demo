@@ -2,8 +2,35 @@
 
 .flatlist__header{
     color:variables.$primary;
+    margin-bottom: 30px;
+    @media(max-width:variables.$sm){
+        font-size: 24px;
+    } 
 }
 
 .flatlist{
-    margin: 20px 30px;
+    margin: 60px 30px;
+}
+
+.flatlist__card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: white;
+    padding:20px 40px;
+    border-width: 10px;
+    border-color:'lighgray'
+}
+
+.flatlist__image{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+
+    @media(max-width:variables.$sm){
+        width: 150px;
+        height: 150px;
+    } 
 }
