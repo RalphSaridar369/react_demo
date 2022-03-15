@@ -37,6 +37,7 @@ const Login = () => {
         <TextInput startIcon={<PersonOutlineIcon/>} onChange={(e)=>setUserCred({...userCred,email:e.target.value})} label="email" placeholder="User123@yopmail.com"/>
         <PassInput startIcon={<LockOutlinedIcon/>} onChange={(e)=>setUserCred({...userCred,password:e.target.value})} label="password" placeholder="********"/>
         <Button text="Login" onClick={()=>handleLogin()}/>
+        <a href="/register" className='login__card__link'>Don't have an account ? register now</a>
       </div>
     </div>
   )
