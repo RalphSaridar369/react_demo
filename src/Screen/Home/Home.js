@@ -5,12 +5,12 @@ import './style.scss';
 
 const Home = () =>{
     const [state,dispatch] = useContext(MainContext)
-    useEffect(()=>{
-        setItem("user","123");
-        setItem("user-details",{usertype:2});
-        console.log(typeof getItem('user-details'))
-        console.log(state)
-    },[])
+    // useEffect(()=>{
+    //     setItem("user","123");
+    //     setItem("user-details",{usertype:2});
+    //     console.log(typeof getItem('user-details'))
+    //     console.log(state)
+    // },[])
     return(
         <div className='home__header'>Hello</div>
     )

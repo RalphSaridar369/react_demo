@@ -6,10 +6,10 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { formValidator } from '../../../helpers/formValidator';
 import { MainContext } from '../../../MainContext'
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [userCred, setUserCred] = useState({
     email:"",
@@ -23,10 +23,10 @@ const Login = () => {
       dispatch({type:"SIGN_IN",payload:{
         UserData:{
           ...userCred,
-          user_type:choice?2:1
+          usertype:choice?2:1
         }
       }})
-      // navigate('/')
+      navigate('/')
     })
   }
 

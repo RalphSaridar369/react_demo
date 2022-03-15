@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './Header.scss';
 import Drawer from '@mui/material/Drawer';
 
@@ -10,9 +10,11 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
+import { MainContext } from '../../MainContext';
 
 const Header = () => {
 
+    const [state, dispatch] = useContext(MainContext)
     const [open, setOpen] = useState(false);
 
     const styles = {
@@ -30,10 +32,10 @@ const Header = () => {
 
 
     let LoggedIn = getItem("user")
-    let UserType = getItem('user-details').usertype;
+    let UserType = state?.UserData?.usertype;
     console.log(UserType)
     let Logout = () => {
-        clear()
+        dispatch({type:'SIGN_OUT'})
     }
 
     const Links = [
