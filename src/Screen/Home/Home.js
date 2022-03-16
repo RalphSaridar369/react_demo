@@ -22,8 +22,8 @@ const Home = () => {
                 </Carousel>
             </div>
             <Flatlist title="Top Products" data={flatList1}/>
-            <Flatlist title="Top Selling" data={flatList2}/>
-            <Flatlist title="Best Consoles" data={flatList3}/>
+            <Flatlist title="Best Selling" data={flatList2}/>
+            <Flatlist title="Top Deals" data={flatList3}/>
         </div>
     )
 }

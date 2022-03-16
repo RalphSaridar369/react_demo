@@ -23,20 +23,20 @@ export const flatList2 = products.slice(5,10);
 export const flatList3 = products.slice(10,15);
 
 export const categories = [
-    {id:1,name:'laptops'},
-    {id:2,name:'phones'},
-    {id:3,name:'consoles'},
+    {value:1,label:'laptops'},
+    {value:2,label:'phones'},
+    {value:3,label:'consoles'},
 ]
 
 export const brands = [
-    {id:1,name:'lenovo',cat_id:1},
-    {id:2,name:'Apple',cat_id:1},
-    {id:3,name:'Dell',cat_id:1},
-    {id:4,name:'Asus',cat_id:1},
-    {id:5,name:'Apple',cat_id:2},
-    {id:6,name:'Samsung',cat_id:2},
-    {id:7,name:'Microsoft',cat_id:3},
-    {id:8,name:'Sony',cat_id:3},
+    {value:1,label:'lenovo',cat_id:1},
+    {value:2,label:'Apple',cat_id:1},
+    {value:3,label:'Dell',cat_id:1},
+    {value:4,label:'Asus',cat_id:1},
+    {value:5,label:'Apple',cat_id:2},
+    {value:6,label:'Samsung',cat_id:2},
+    {value:7,label:'Microsoft',cat_id:3},
+    {value:8,label:'Sony',cat_id:3},
 ]
 
 export const carouselData = [

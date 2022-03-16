@@ -8,7 +8,8 @@
     @include variables.input;
 }
 
-.docpicker{
-    width:200px;
+.doc{
     margin:10px 0!important;
+    @include variables.input;
+    border-color: variables.$primary!important;
 }

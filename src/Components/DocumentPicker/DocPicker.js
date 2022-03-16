@@ -2,16 +2,17 @@ import React from 'react';
 import {Button} from '@mui/material'
 import '../Components.scss';
 
-const DocPicker = ({startIcon,endIcon,text,...props}) => {
+const DocPicker = ({startIcon, endIcon, text, types, ...props}) => {
+
     return (
         <Button
-            variant="contained"
+            variant="outlined"
             component="label"
             startIcon={startIcon}
             endIcon={endIcon}
-            className='docpicker'
+            className='doc'
         >
-            {text}
+            <p style={{color:'#FF6863'}}>{text}</p>
             <input
                 type="file"
                 hidden

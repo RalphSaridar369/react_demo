@@ -21,5 +21,10 @@ export const useStyles = makeStyles({
         borderColor: focusedColor
       }
     }
+  },
+  icon:{
+    "& MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root":{
+      color:'#FF6863'
+    }
   }
 });
